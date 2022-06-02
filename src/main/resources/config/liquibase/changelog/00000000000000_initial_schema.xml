@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Stock.
+    -->
+    <changeSet id="20220527113113-1" author="milad">
+        <createTable tableName="stock">
+            <column name="id" autoIncrement="true" startWith="12" incrementBy="1" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="current_price" type="NUMERIC">
+                <constraints nullable="false" />
+            </column>
+            <column name="last_update" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="deleted" type="boolean">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <dropDefaultValue tableName="stock" columnName="last_update" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!--
+          Load sample data
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20220527113113-1-data" author="milad" context="faker">
+        <loadData
+                file="config/liquibase/fake-data/stock.csv"
+                separator=";"
+                tableName="stock"
+                usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="current_price" type="numeric"/>
+            <column name="last_update" type="date"/>
+            <column name="deleted" type="boolean"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
