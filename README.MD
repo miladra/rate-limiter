@@ -24,10 +24,15 @@
    * Junit, Spring Boot, Mockito
   
 # Thought of Process
+
+
    - I assumed creating two stock with same name is not allowed.
    - I added PUT method to update the stock, and PATCH method to partially update the stock.
-   - I prioritized the server so that the price is updated by server time when PUT and PATCH are called.
+   - I prioritized the server time, so that the price is updated by server time when PUT and PATCH are called.
    - I implemented soft delete to history tracking or audit and also related to reference integrity.
+   - The application supports 2 language (nl, en) as a query param. ?lang=en OR lang=nl
+   - Provided the X-Request-Id header for updating price due to implementing idempotency. I Used a Caffeine as a cache for storing X-Request-Id to handle Idempotence. X-Request-Id-X-RateLimit-Remaining , X-Request-Id-X-RateLimit-Limit added to the response header.
+   - Add JMX Stock-XManagement for managing Application with JMX, like clear Caffeine cache.
 
 ### initial data
 
@@ -109,7 +114,7 @@
    - **I have left open the Pull Requests from branches for simplicity**
 ### Future improvements
    * Upgrade to Java 16
-   * Add Integration tests with continerized database, Architecture tests, End to ENd tests
+   * Add Integration tests with continerized database, Architecture tests, End to END tests
    * Add a security layer such as JWT
    * Create deployment pipelines to build and deploy the artifact into different environments
 
