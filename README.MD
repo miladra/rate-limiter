@@ -28,10 +28,13 @@
 
    - I assumed creating two stock with same name is not allowed.
    - I added PUT method to update the stock, and PATCH method to partially update the stock.
-   - I prioritized the server time, so that the price is updated by server time when PUT and PATCH are called.
+   - I thought if multi clients are able to update the price. Client1 repeats its request due to for example a network error, it might make a late update on Client2.
+     That's why I assumed:
+      - First: each update date is longer than the last update date in the database. 
+      - Second: a request must be executed only once (Idempotent).in order to do that I provide the X-Request-Id header for updating price due to implementing idempotency.
+        - I Used a Caffeine as a cache for storing X-Request-Id to handle idempotency. X-Request-Id-X-RateLimit-Remaining , X-Request-Id-X-RateLimit-Limit added to the response header.
    - I implemented soft delete to history tracking or audit and also related to reference integrity.
    - The application supports 2 language (nl, en) as a query param. ?lang=en OR lang=nl
-   - Provided the X-Request-Id header for updating price due to implementing idempotency. I Used a Caffeine as a cache for storing X-Request-Id to handle Idempotence. X-Request-Id-X-RateLimit-Remaining , X-Request-Id-X-RateLimit-Limit added to the response header.
    - Add JMX Stock-XManagement for managing Application with JMX, like clear Caffeine cache.
 
 ### initial data
