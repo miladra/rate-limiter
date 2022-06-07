@@ -87,18 +87,18 @@
    - Code quality can be analyzed using SonarQube
    - I specific Docker Compose configuration for Sonar
     
-    ```
-    docker-compose -f docker/sonar.yml up -d
+   ```
+   docker-compose -f docker/sonar.yml up -d
     
-    ```
+   ```
    - SonarQube default login and assword is "admin"
    - You need to get token from: in right top of sonarQube pannel -> User(Administrator) > My Account > Security > Generate Tokens
    - Then you can run below command by maven
     
-    ```
-    mvn sonar:sonar -Dsonar.host.url=http://localhost:9001 -Dsonar.login='GeneratedToken'
+   ```
+   mvn sonar:sonar -Dsonar.host.url=http://localhost:9001 -Dsonar.login='GeneratedToken'
     
-    ```
+   ```
   
 ## API documentation
 
@@ -116,6 +116,7 @@
    * Upgrade to Java 16
    * Add Integration tests with continerized database, Architecture tests, End to END tests
    * Add a security layer such as JWT
+   * Consider concurrency topics. adding versioning to handle optimistic locking
    * Create deployment pipelines to build and deploy the artifact into different environments
 
 ###### By: Milad Ranjbari
