@@ -31,7 +31,7 @@
 
 ### initial data
 
-   - Liquebase will create the initial list of stocks in the dev profile
+   - Liquibase will create the initial list of stocks in the dev profile
    
 ### Build and run the application standalone
 
@@ -45,7 +45,7 @@
    - Clone the repository
 
         ```
-        git clone <repository url>
+        git clone https://github.com/miladra/Milad-Ranjbari-pq-assignment.git
         
         ```
         
