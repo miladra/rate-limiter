@@ -12,7 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @author Milad Ranjbari
  * @version 2022.6.1
  * @since 6/01/22
- * Handle rate control and idempotence when add this annotation on method
+ * Handle rate control and idempotence when adding this annotation on the method
  */
 @Target({ElementType.METHOD})
 @Retention(RUNTIME)
