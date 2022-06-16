@@ -22,7 +22,7 @@ import java.util.Locale;
  * @author Milad Ranjbari
  * @version 2022.6.1
  * @since 6/01/22
- * This class handle Rate Controller/Idempotence for every endpoint we used it asa annotation above it
+ * This class handle Rate Controller/Idempotence for every endpoint we used it as an annotation above it
  */
 @Aspect //let know Spring that this is an Aspect class
 @Component //Spring will consider this class as a Spring bean
@@ -51,7 +51,7 @@ public class RateControllersAspectHandler {
     public Object rateHandler(ProceedingJoinPoint joinPoint) throws Throwable {
         RateController annotation = getAnnotation(joinPoint);
         String parameterName = annotation.parameterName();
-        String parameterValue = httpServletRequest.getHeader(parameterName);
+        String parameterValue = httpServletRequest.getParameter(parameterName);
         String lang = httpServletRequest.getParameter("lang");
         if(lang==null) lang="en";
         String cacheKey = parameterName + ":" + parameterValue;
