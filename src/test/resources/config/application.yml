@@ -15,7 +15,7 @@ spring:
       com.example: DEBUG
   spring:
     application:
-      name: minibankc
+      name: stock
     datasource:
       url: jdbc:h2:mem:stock
       #    url: jdbc:h2:file:/data/demo if you  want to store data, uncomment this line
