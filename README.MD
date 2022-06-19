@@ -121,5 +121,7 @@
    * Add a security layer such as JWT
    * Consider concurrency topics. adding versioning to handle optimistic locking
    * Create deployment pipelines to build and deploy the artifact into different environments
+   * Manage server-side error page,
+   * Enable or Disable Swager between dev or prod profile
 
 ###### By: Milad Ranjbari

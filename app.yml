@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
-      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - SPRING_PROFILES_ACTIVE=prod
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
       - SPRING_DATASOURCE_URL=jdbc:postgresql://stock-postgresql:5432/stock
       - SPRING_LIQUIBASE_URL=jdbc:postgresql://stock-postgresql:5432/stock

@@ -13,11 +13,6 @@ logging:
 spring:
   server:
     port: 8090
-  devtools:
-    restart:
-      enabled: false
-    livereload:
-      enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/stock
@@ -31,8 +26,6 @@ spring:
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
-  thymeleaf:
-    cache: true
 
 server:
   port: 8090
