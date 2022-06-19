@@ -4,15 +4,7 @@
 # This configuration will be overridden by the Spring profile you use,
 # for example application-dev.yml if you use the "dev" profile.
 #
-# Conditionally disable springdoc on missing api-docs profile
-spring:
-  config:
-    activate:
-      on-profile: '!api-docs'
-springdoc:
-  api-docs:
-    enabled: false
----
+
 spring:
   application:
     name: stock
@@ -24,7 +16,6 @@ spring:
     group:
       dev:
         - dev
-        - api-docs
   data:
     jpa:
       repositories:

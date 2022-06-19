@@ -30,7 +30,6 @@
 		<liquibase.version>4.6.1</liquibase.version>
 		<liquibase-hibernate5.version>4.6.1</liquibase-hibernate5.version>
 		<profile.no-liquibase />
-		<profile.api-docs />
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,10 +39,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -133,12 +128,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>1.17.2</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>test</scope>
@@ -170,12 +159,6 @@
 		<id>no-liquibase</id>
 		<properties>
 			<profile.no-liquibase>,no-liquibase</profile.no-liquibase>
-		</properties>
-	</profile>
-	<profile>
-		<id>api-docs</id>
-		<properties>
-			<profile.api-docs>,api-docs</profile.api-docs>
 		</properties>
 	</profile>
 	<profile>
@@ -255,11 +238,6 @@
 		<id>prod</id>
 		<dependencies>
 			<dependency>
-				<groupId>org.testcontainers</groupId>
-				<artifactId>postgresql</artifactId>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 			</dependency>
@@ -287,8 +265,6 @@
 						</execution>
 					</executions>
 				</plugin>
-
-
 				<plugin>
 					<groupId>io.github.git-commit-id</groupId>
 					<artifactId>git-commit-id-maven-plugin</artifactId>
@@ -297,7 +273,7 @@
 		</build>
 		<properties>
 			<!-- default Spring profiles -->
-			<spring.profiles.active>prod${profile.api-docs}${profile.no-liquibase}</spring.profiles.active>
+			<spring.profiles.active>prod${profile.no-liquibase}</spring.profiles.active>
 		</properties>
 	</profile>
 	</profiles>
