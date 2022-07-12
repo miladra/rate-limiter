@@ -65,14 +65,15 @@ public interface IStockResource {
     ) throws URISyntaxException;
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Get the list of stocks in body", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StockDTO.class))}),})
+            @ApiResponse(responseCode = "200", description = "Get the list of stocks in body", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StockDTO.class))}),})
     @Operation(summary = "Get All the stocks.")
     ResponseEntity<List<StockDTO>> getAllStocks(@org.springdoc.api.annotations.ParameterObject Pageable pageable,
                                                 @Parameter(description = "Lang for changing message language. lang[en/nl]")
                                                 @RequestParam(required = false, defaultValue = "en") String lang);
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Get the list of stocks in body", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StockDTO.class))}),})
+            @ApiResponse(responseCode = "200", description = "Get the list of stocks in body", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = StockDTO.class))}),
+            @ApiResponse(responseCode = "404", description = "The stock is not found", content = @Content)})
     @Operation(summary = "Get the stocks.")
     ResponseEntity<StockDTO> getStock(@PathVariable Long id,
                                       @Parameter(description = "Lang for changing message language. lang[en/nl]")
