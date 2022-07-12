@@ -110,7 +110,9 @@
 ## Development Strategy
 
    - I have followed the Git Flow that is called Release branches , I borrowed it from [link](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow#Release%20branches)
-   <img src="https://wac-cdn.atlassian.com/dam/jcr:8f00f1a4-ef2d-498a-a2c6-8020bb97902f/03%20Release%20branches.svg" width="400" height="400" />
+   
+   ![Git Flow](https://wac-cdn.atlassian.com/dam/jcr:8f00f1a4-ef2d-498a-a2c6-8020bb97902f/03%20Release%20branches.svg)
+
    - Using a dedicated branch to prepare releases makes it possible for one team to polish the current release while another team continues working on features for the next release
    - **I have left open the Pull Requests from branches for simplicity**
 ### Future improvements
