@@ -1,5 +1,5 @@
 # Stock Api
-   Java-based backend application that implements Below RESTFUL APIs for Stock Management.
+   Java-based backend application that implements a rate limiter for below RESTFUL APIs for Stock Management.
 
 ## API spec
    - GET /api/stocks (get a list of stocks)
