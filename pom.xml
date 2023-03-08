@@ -8,11 +8,11 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.payconiq</groupId>
+	<groupId>com.amazingstock</groupId>
 	<artifactId>stock</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>stock</name>
-	<description>payconiq assignment</description>
+	<description>amazing stock</description>
 	<properties>
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -198,7 +198,7 @@
 							<defaultSchemaName></defaultSchemaName>
 							<username>stock</username>
 							<password>stock</password>
-							<referenceUrl>hibernate:spring:com.payconiq.stock.domain?dialect=org.hibernate.dialect.PostgreSQL10Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+							<referenceUrl>hibernate:spring:com.amazingstock.stock.domain?dialect=org.hibernate.dialect.PostgreSQL10Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
 							<verbose>true</verbose>
 							<logging>debug</logging>
 							<contexts>!test</contexts>

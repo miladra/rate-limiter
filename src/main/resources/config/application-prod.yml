@@ -8,7 +8,7 @@
 logging:
   level:
     ROOT: INFO
-    com.payconiq.stock: INFO
+    com.amazingstock.stock: INFO
 
 spring:
   server:
