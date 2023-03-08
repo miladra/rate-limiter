@@ -1,4 +1,4 @@
-# Stock Api
+# Rate Limiter
    Java-based backend application that implements a rate limiter for below RESTFUL APIs for Stock Management.
 
 ## API spec
